@@ -1,5 +1,14 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <titulo texto="Informacion y datos" />
   </div>
 </template>
+
+<script>
+import titulo from '../components/Titulo';
+export default {
+  components:{
+    titulo
+  }
+}
+</script>
