@@ -3,8 +3,9 @@
     <router-link to="/">Inicio</router-link> |
     <router-link to="/about">Información</router-link> |
     <router-link to="/blog">Blog</router-link> 
+      <router-view/>
   </div>
-  <router-view/>
+
 </template>
 
 <style>
