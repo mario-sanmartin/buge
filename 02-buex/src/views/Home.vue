@@ -7,15 +7,19 @@
     >
      {{titulo}} | Contador desde Vuex: {{contador}}
     </h1>
+    <button @click="accionIncrementar">:)</button>
+    <btn-disminuir/>
   </div>
 </template>
 
 <script>
-import {mapState} from 'vuex';
+import {mapState,mapActions} from 'vuex';
+import btnDisminuir from '../components/BtnDisminuir';
 
 export default {
   name: 'Home',
   components: {
+    btnDisminuir
   },
   data() {
     return {
@@ -30,6 +34,13 @@ export default {
     colorContador(){
      return [this.contador > 100 ? {'color':'green'}:{'color':'red'}]
     }
+  },
+  methods:{
+    // las mutations se mapean aqui , pero esto nunca lo realizaremos
+    //ya que las action descencadena a las mutaciones y estas a su vez solo modifican el state
+    // ...mapMutations(['incrementar','disminuir'])
+    //Las actions igual
+    ...mapActions(['accionIncrementar'])
 
   }
 }
