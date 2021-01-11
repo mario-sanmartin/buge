@@ -9,17 +9,21 @@
     </h1>
     <button @click="accionIncrementar">:)</button>
     <btn-disminuir/>
+    <hr>
+    <btn-accion  :estado="true"/>
+    <btn-accion :estado="false"/>
   </div>
 </template>
 
 <script>
 import {mapState,mapActions} from 'vuex';
 import btnDisminuir from '../components/BtnDisminuir';
+import btnAccion from '../components/btnAccion';
 
 export default {
   name: 'Home',
   components: {
-    btnDisminuir
+    btnDisminuir,btnAccion
   },
   data() {
     return {
