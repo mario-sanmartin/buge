@@ -7,8 +7,8 @@ export default createStore({
   },
   mutations: {
     // la unica forma de modifcar el state
-    incrementar(state){
-      state.contador = state.contador + 10
+    incrementar(state,payload){
+      state.contador = state.contador + payload
     },
     disminuir(state,payload){
       state.contador = state.contador - payload
@@ -20,6 +20,13 @@ export default createStore({
     },
     accionDisminuir({commit},valor){
       commit('disminuir',valor)
+    },
+    accionBtn({commit},objeto){
+      if(objeto.estado){
+        commit('incrementar',objeto.numero)
+      }else {
+        commit('disminuir',objeto.numero)
+      }
     }
   },
   modules: {
