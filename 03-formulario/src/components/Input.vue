@@ -1,5 +1,6 @@
  <template>
-         <input
+  <div>
+          <input
       type="text"
       placeholder="Ingrese nombre"
       class="form-control my-2"
@@ -68,13 +69,14 @@
           v-model.number="tarea.numero"
           >
       </div>
-        <button
+      <button
          class="btn btn-dark mt-2 btn-block"
          type="submit"
          :disabled="bloquearBtn"
          >
           Procesar
-        </button>
+      </button>
+  </div>
  </template>
  
  <script>
